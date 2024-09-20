@@ -1,81 +1,186 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-body{
-    margin: 0;
-}
-:root{
-    --primary:rgb(65, 7, 7);
-    --secondary: rgb(255, 0, 144);
 
+:root {
+  --primary: #603f26;
+  --secondary: #ffdbb5;
+  --ternary: #ffdbb5;
 }
-.hero{
-    height: 90vh;
-    position: relative;
+.hero {
+  height: 90vh;
+  position: relative;
 }
-.hero video{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.hero video+div{
-    position: absolute;
-    width: 400px;
-    background-color: rgba(128, 128, 128, 0.665);
-    color: var(--primary);
-    top: 28vh;
-    left:10vh;
-    padding: 1rem;
-    border-radius: 10px;
-    backdrop-filter: blur(3px);
+.hero video + div {
+  position: absolute;
+  width: 400px;
+  background-color: rgba(128, 128, 128, 0.665);
+  color: var(--primary);
+
+  left: 10vh;
+  padding: 1rem;
+  border-radius: 10px;
+  backdrop-filter: blur(3px);
+  top: 35vh;
 }
-hr{
-   border: 1px solid black;
+
+.arrow {
+  color: rgb(232, 15, 15);
+  font-size: 5rem;
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: rotate(90deg);
+  animation: arrowdown 1s infinite ease-out;
 }
-.arrow{
-    color: rgb(232, 15, 15);
-    font-size: 5rem;
-    position: absolute;
+@keyframes arrowdown {
+  0% {
     bottom: 70px;
     left: 50%;
-    transform: rotate(90deg);
-    animation: arrowdown 1s infinite ease-out;
+  }
+  100% {
+    bottom: 10px;
+    left: 50%;
+  }
 }
-@keyframes arrowdown{
-    0%{
-        bottom: 70px;
-        left: 50%;
-    }
-    100%{
-        bottom: 10px;
-        left: 50%;
-    }
+.place {
+  margin: 2rem 0;
 }
 /* nav bar */
-nav{
-    background-color: var(--primary);
-    color: white;
-    position: sticky;
-    top: 0;
-    
+nav {
+  background-color: var(--primary);
+  color: white;
+  position: sticky;
+  top: 0;
 }
-.container{
-    width: 80%;
-    margin :auto;
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-    
+.container {
+  width: 80%;
+  margin: auto;
+}
+.navitem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  height: 10vh;
+}
+.list ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  gap: 10px;
+}
+.list li:hover {
+  color: var(--secondary);
+  transform: all scale(1.4);
+}
+/* image */
+[class^="img"] {
+  height: 60vh;
+}
+.first {
+  word-spacing: 0.25rem;
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+.img1 {
+  background: url(./assets/a.avif) no-repeat center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed;
+}
+.second {
+  color: var(--primary);
+  font-size: 1.5rem;
+}
+.second p {
+  padding-top: 1 0.5rem;
+}
 
+.title {
+  background-color: rgba(0, 0, 0, 0.42);
+  color: white;
+  font-size: 2rem;
+  letter-spacing: 0.5rem;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
 }
-.list ul{
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-    list-style-type: none;
-    gap: 10px;
+.img2 {
+  background: url(./assets/b.jpg) no-repeat center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed;
 }
-.list li:hover{
-color: var(--secondary);
-transform: all scale(1.4);
+hr {
+  width: 350x;
+  border: none;
+  background-color: var(--primary);
+  margin: 1rem 0;
+  height: 2px;
+}
+/* contact */
+.contactUs {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  color: var(--primary);
+}
+.img3 {
+  background: url(./assets/contact.avif) no-repeat center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed;
+}
+h3,
+h3 ~ p {
+  padding: 1rem 0;
+}
+.vertical-line {
+  height: 300px;
+  border: 2px solid var(--primary); /* Define the vertical line */
+  margin-left: 20px; /* Optional: add spacing */
+}
+/* footer */
+footer {
+  background-color: black;
+  color: whitesmoke;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 570px) {
+  .title {
+    font-size: 1.5rem;
+    letter-spacing: 0.25rem;
+    height: 20vh;
+    padding: 1rem;
+  }
+  .hero video + div {
+    left: 8vh;
+  }
+  .first,
+  .second {
+    font-size: 1rem;
+  }
 }
